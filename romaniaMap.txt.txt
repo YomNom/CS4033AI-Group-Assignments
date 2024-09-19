@@ -11,7 +11,8 @@ Arad
 Timisoara
 118
 Timisoara
-Lugoj 111
+Lugoj
+111
 Lugoj
 Mehadia
 70
@@ -31,7 +32,8 @@ Rimnicuvilcea
 Craiovu
 146
 Rimnicuvilcea
-Pitesti 97
+Pitesti
+97
 Craiovu
 Pitesti
 138
