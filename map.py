@@ -21,10 +21,8 @@ class Arc():
 def findCity(cityToFind, map): 
 	for i in range(len(map)): 
 		if map[i].cityName == cityToFind:
-			#print("FindCity", i, map[i].cityName)
 			return i
-	#print("false")
-	return False
+	return "False"
 
 # By JY
 # Prints out an array of the class CityNode
@@ -56,15 +54,14 @@ def readInMap(fileInput):
 
 		# Adding city to map if its not there
 		cityFrom = findCity(Road[0], map)
-		if cityFrom == False: # Not on map
+		if cityFrom == "False": # Not on map
 			map.append(CityNode(Road[0]))
 			cityFrom = findCity(Road[0], map)
-			print("From", Road[0], cityFrom)
+
 		cityTo = findCity(Road[1], map)
-		if cityTo == False: 
+		if cityTo == "False": 
 			map.append(CityNode(Road[1]))
 			cityTo = findCity(Road[1], map)
-			#print("To",Road[1], cityTo)
 
 		cityArc = Arc(cityTo, Road[2])
 		map[cityFrom].route.append(cityArc)
