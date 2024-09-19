@@ -12,9 +12,10 @@ class ToCity(CityNode):
 		self.index = i
 		self.distance = distance
 
+# By JY
 # Reads in a text file containing information about the routes
-# Pre-Cond: Text file should be in the same folder as this file(map.py)
-# INPUT: fileInput - name of file to read data from
+# Note: Text file should be in the same folder as this file(map.py)
+# INPUT: fileInput - string containing name of file to read data from
 # OUTPUT: Data read into a linked list representing the map
 ##########################################################################
 #### TEXT FILE format: 
@@ -23,5 +24,9 @@ class ToCity(CityNode):
 #####   Distance between two cities
 #####   ...
 def readInMap(fileInput): 
-
+	with open(fileInput) as f: 
+		for line in f: 
+			Route = line.split(' ')
+			Route[2] = Route[2].strip()
+			print(Route) 
 
