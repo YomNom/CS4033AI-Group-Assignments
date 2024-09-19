@@ -5,12 +5,15 @@ class CityNode:
 	def _init_(cityName):
 		self.cityName = cityName
 		self.used = false
-		self.route = [ToCity] 
+		self.route = [] 
 
-class ToCity(CityNode): 
+class Arc(): 
 	def _init_(i, distance): 
 		self.index = i
 		self.distance = distance
+
+def findCityIndex(cityToFind, map[]): 
+
 
 # By JY
 # Reads in a text file containing information about the routes
@@ -24,9 +27,18 @@ class ToCity(CityNode):
 #####   Distance between two cities
 #####   ...
 def readInMap(fileInput): 
+	map = []
 	with open(fileInput) as f: 
 		for line in f: 
+
+			# Splits line from file and removes line breaks
 			Route = line.split(' ')
 			Route[2] = Route[2].strip()
+
 			print(Route) 
+
+			GoTo = Arc(Route[1], Route[2])
+			map.append(CityNode(Route[0]))
+
+
 
