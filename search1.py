@@ -13,8 +13,6 @@
 #	(4) A* Algorithm
 import map
 
-map.readInMap('romaniaMap.txt')
+romania = map.readInMap('romaniaMap.txt')
+map.printMap(romania)
 
-# Hey guys! I've stored all the info about the map in a text file and just read that info
-# into the code. Currently deciding on how we should represent the information in a class and how the data should be
-# in a linked list, or maybe it would be good in an array.

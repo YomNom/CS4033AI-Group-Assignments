@@ -2,18 +2,37 @@
 # Purpose: Holds map class and functions
 
 class CityNode: 
-	def _init_(cityName):
+	def __init__(self, cityName):
 		self.cityName = cityName
-		self.used = false
+		self.used = False
 		self.route = [] 
 
 class Arc(): 
-	def _init_(i, distance): 
+	def __init__(self, i, distance): 
 		self.index = i
 		self.distance = distance
 
-def findCityIndex(cityToFind, map[]): 
+# By JY
+# Looks for a city in the map List
+# INPUT: cityToFind - a string of the city name
+#		 map - an array to look for the city in
+# OUTPUT: index of where the city was in the List
+#		  False if no city was found
+def findCity(cityToFind, map): 
+	for i in range(len(map)): 
+		if map[i].cityName == cityToFind:
+			#print("FindCity", i, map[i].cityName)
+			return i
+	#print("false")
+	return False
 
+# By JY
+# Prints out an array of the class CityNode
+def printMap(map): 
+	for i in map:
+		print(i.cityName)
+		for x in i.route:
+			print(x.index, x.distance)
 
 # By JY
 # Reads in a text file containing information about the routes
@@ -28,17 +47,28 @@ def findCityIndex(cityToFind, map[]):
 #####   ...
 def readInMap(fileInput): 
 	map = []
-	with open(fileInput) as f: 
-		for line in f: 
 
-			# Splits line from file and removes line breaks
-			Route = line.split(' ')
-			Route[2] = Route[2].strip()
+	f = open(fileInput, 'r')
+	for line in f: 
+		# Splits line from file and removes line breaks
+		Road = line.split(' ')
+		Road[2] = Road[2].strip()
 
-			print(Route) 
+		# Adding city to map if its not there
+		cityFrom = findCity(Road[0], map)
+		if cityFrom == False: # Not on map
+			map.append(CityNode(Road[0]))
+			cityFrom = findCity(Road[0], map)
+			print("From", Road[0], cityFrom)
+		cityTo = findCity(Road[1], map)
+		if cityTo == False: 
+			map.append(CityNode(Road[1]))
+			cityTo = findCity(Road[1], map)
+			#print("To",Road[1], cityTo)
 
-			GoTo = Arc(Route[1], Route[2])
-			map.append(CityNode(Route[0]))
-
-
-
+		cityArc = Arc(cityTo, Road[2])
+		map[cityFrom].route.append(cityArc)
+		cityArc = Arc(cityFrom, Road[2])
+		map[cityTo].route.append(cityArc)
+	f.close()
+	return map
