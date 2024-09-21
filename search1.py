@@ -11,20 +11,30 @@
 #	(2) Depth First
 #	(3) Best First(greedy algorithm)
 #	(4) A* Algorithm
-import map
+from romaniaMap import findCity, readInMap
+# Import the breadth_search function
+import breadthSearch
 import depthFirst
 
-romania = map.readInMap('romaniaMap.txt')
+romania = readInMap('romaniaMap.txt')
 
 print("List of cities: ")
 for i in romania:
 	print(i.cityName)
 
-start = input("Starting city: ")
-end = input("Destination: ")
+start_city = input("Starting city: ")
+goal_city = input("Destination: ")
 
-if findCity(start, romania) == "False" or findCity(end, romania) == "False":
+if findCity(start_city, romania) == "False" or findCity(goal_city, romania) == "False":
 	print("A city is not in the list")
 else: 
-	path = depthFirstSearch()
-	printMap(path)
+	# path = breadthSearch.bfs(romania, start_city, goal_city)
+	# # Print the result of the BFS function
+	# if path: print("Breadth First Search Path:", path)
+	# else:
+	# 	print("No path found or cities are unreachable.")
+	path = depthFirst.dfs(romania, start_city, goal_city)
+	# Print the result of the BFS function
+	if path: print("Depth First Search Path:", path)
+	else:
+		print("No path found or cities are unreachable.")
