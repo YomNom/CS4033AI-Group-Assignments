@@ -1,8 +1,13 @@
 # FILE: depthFirst.py
+# Purpose: Implement depth first search algorithm
 from collections import deque
 from romaniaMap import findCity 
 
-# Depth First Search algorithm
+# By KB
+# Depth First Search Algorithm
+# INPUT: map(list of cityNodes)
+#        startCity, endCity - cityNodes
+# OUTPUT: Deque representing path to the goal city
 def dfs(map, startCity, goalCity):
     startIndex = findCity(startCity, map)
     if startIndex == "False":

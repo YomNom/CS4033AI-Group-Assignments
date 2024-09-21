@@ -1,9 +1,14 @@
-# By KB
-# from collections import deque
+# FILE: breadthSearch.py
+# Purpose: Implement Breadth Search algorithm
+
 from collections import deque
 from romaniaMap import findCity
 
-# Breadth First Search algorithm
+# By KB
+# Breadth First Search Algorithm
+# INPUT: map(list of cityNodes)
+#        startCity, endCity - cityNodes
+# OUTPUT: Deque representing path to the goal city
 def bfs(map, startCity, goalCity):
     startIndex = findCity(startCity, map)
     if startIndex == "False":
