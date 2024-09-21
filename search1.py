@@ -12,7 +12,19 @@
 #	(3) Best First(greedy algorithm)
 #	(4) A* Algorithm
 import map
+import depthFirst
 
 romania = map.readInMap('romaniaMap.txt')
-map.printMap(romania)
 
+print("List of cities: ")
+for i in romania:
+	print(i.cityName)
+
+start = input("Starting city: ")
+end = input("Destination: ")
+
+if findCity(start, romania) == "False" or findCity(end, romania) == "False":
+	print("A city is not in the list")
+else: 
+	path = depthFirstSearch()
+	printMap(path)
