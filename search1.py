@@ -30,7 +30,7 @@ goal_city = input("Destination: ")
 if findCity(start_city, romania) == "False" or findCity(goal_city, romania) == "False":
 	print("Uh-Oh! A city was typed in wrong! BYE!")
 else: # Correct input for start_city and goal_city
-	implementSearch = int(input("Which search algorithm should be Implement?\n(1) Breadth Search\n(2) Depth First\n(3) Greedy Search\n(4) A* Algorithm\n(Enter value from 1 to 4): "))
+	implementSearch = int(input("Which search algorithm should be implemented?\n(1) Breadth Search\n(2) Depth First\n(3) Greedy Search\n(4) A* Algorithm\n(Enter value from 1 to 4): "))
 
 	match(implementSearch):
 		case 1: # Breadth Search
