@@ -4,3 +4,8 @@
 #	of the children of the current city to the goal city
 import romaniaMap
 
+import heuristic
+
+sld = heuristic.get_heuristic('Lugoj')
+
+print(sld)
