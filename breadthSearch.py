@@ -11,12 +11,7 @@ from romaniaMap import findCity
 # OUTPUT: Deque representing path to the goal city
 def bfs(map, startCity, goalCity):
     startIndex = findCity(startCity, map)
-    if startIndex == "False":
-        return f"Start city {startCity} not found."
-
     goalIndex = findCity(goalCity, map)
-    if goalIndex == "False":
-        return f"Goal city {goalCity} not found."
 
     # Step 1: Initialize the frontier (queue) with the starting city
     frontier = deque([[startIndex]])  # Store paths instead of just indices
