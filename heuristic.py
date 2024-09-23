@@ -30,7 +30,7 @@ def get_heuristic1(cityName):
 def get_heuristic2(cityName):
     # Define a dictionary with heuristic values for each city
     heuristic_values = {
-     'Arad' : 341,
+    'Arad' : 341,
     'Bucharest' : 224,
     'Craiova' : 0,
     'Drobeta' : 115,
@@ -47,7 +47,9 @@ def get_heuristic2(cityName):
     'Rimnicu_Vilcea' : 141,
     'Sibiu' : 211,
     'Timisoara' : 346,
-    'Urziceni' : 304
+    'Urziceni' : 304,
+    'Vaslui' : 436,
+    'Zerind' : 406
 }
     
     return heuristic_values.get(cityName, float('inf'))  # Return heuristic or infinity if city not in list
