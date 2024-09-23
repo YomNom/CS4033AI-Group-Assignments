@@ -15,6 +15,8 @@ from romaniaMap import findCity, readInMap
 
 import breadthSearch
 import depthFirst
+import greedySearch
+from heuristic import get_heuristic  # Import the heuristic function
 path = []
 
 # Nodes of cities are allocated into an array from an external file
@@ -38,7 +40,7 @@ else: # Correct input for start_city and goal_city
 		case 2: # Depth First
 			path = depthFirst.dfs(romania, start_city, goal_city)
 		case 3: # Greedy/Best Search
-			path = "Greedy"
+			path = greedySearch.best_first_search(romania, start_city, goal_city)
 		case 4: # A* Algorithm
 			path = "A* Algorithm"
 		case default: 
@@ -47,4 +49,5 @@ else: # Correct input for start_city and goal_city
 	if path: print("Path from ", start_city, " to ", goal_city, ": ", path, "\n")
 	else: print("No path found or cities are unreachable.")
 
-	
+	#BFS -  Arad -> Sibiu -> Fugaras -> Bucharest 
+	#DFS -  Arad -> Sibiu -> Rimnicuvilcea -> Pitesti -> Bucharest

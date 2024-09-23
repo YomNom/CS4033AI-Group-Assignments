@@ -7,13 +7,13 @@ Timisoara Lugoj 111
 Lugoj Mehadia 70
 Mehadia Drobeta 75
 Drobeta Craiovu 120
-Sibiu Fugaras 99
+Sibiu Fagaras 99
 Sibiu Rimnicuvilcea 80
 Rimnicuvilcea Craiovu 146
 Rimnicuvilcea Pitesti 97
 Craiovu Pitesti 138
 Pitesti Bucharest 101
-Fugaras Bucharest 211
+Fagaras Bucharest 211
 Bucharest Giurgiu 90
 Bucharest Urziceni 85
 Urziceni Hirsova 98
