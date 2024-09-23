@@ -1,13 +1,9 @@
-# FILE: depthFirst.py
-# Purpose: Implement depth first search algorithm
+# Author : Khushbu Borwal
+# Purpose: Implement Depth First Search algorithm
 from collections import deque
 from romaniaMap import findCity 
 
-# By KB
-# Depth First Search Algorithm
-# INPUT: map(list of cityNodes)
-#        startCity, endCity - cityNodes
-# OUTPUT: Deque representing path to the goal city
+# Implementation of Depth First Search algorithm
 def dfs(map, startCity, goalCity):
     startIndex = findCity(startCity, map)
     if startIndex == "False":
@@ -42,9 +38,3 @@ def dfs(map, startCity, goalCity):
                     frontier.append(new_path)  # Add the new path to the stack
 
     return "Goal city not reachable from the start city."
-
-# Example usage with romaniaMap.txt
-# romania_map = map.readInMap('romaniaMap.txt')
-# start_city = 'Arad'
-# goal_city = 'Bucharest'
-# print("Depth First Search Path:", dfs(romania_map, start_city, goal_city))
