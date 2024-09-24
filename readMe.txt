@@ -1,4 +1,4 @@
-# Instructions to run the code
-# Open the given folder in Visual Studio code
-# Run the below command
-# python3 search1.py
+How to run:
+1) Open terminal
+2) Go to directory where search.py is located, as well as the other files
+3) execute "python search1.py"
