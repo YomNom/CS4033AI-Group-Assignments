@@ -1,9 +1,10 @@
-# bestFirstSearch.py
+# Author : Khushbu Borwal
+# Purpose: Implement Best First Search Algorithm
 from romaniaMap import findCity
-from heuristic import get_heuristic  # Import the heuristic function
+from heuristic import get_heuristic1, get_heuristic2  # Import the heuristic function
 
-# Best-First Search algorithm
-def best_first_search(map, startCity, goalCity):
+# Implementation of Best-First Search algorithm
+def best_first_search(map, startCity, goalCity, heuristic_choice):
     startIndex = findCity(startCity, map)
     if startIndex == "False":
         return f"Start city {startCity} not found."
@@ -13,7 +14,8 @@ def best_first_search(map, startCity, goalCity):
         return f"Goal city {goalCity} not found."
 
     # Step 1: Initialize the frontier (priority queue) with the starting city
-    frontier = [(get_heuristic(map[startIndex].cityName), [startIndex])]  # Store paths instead of indices
+    initial_value = get_heuristic_choice(map[startIndex].cityName, heuristic_choice)
+    frontier = [(initial_value, [startIndex])]  # Store paths instead of indices
     explored = set()
 
     while frontier:
@@ -33,6 +35,14 @@ def best_first_search(map, startCity, goalCity):
             if arc.index not in explored:
                 new_path = list(path)  # Copy the current path
                 new_path.append(arc.index)  # Add neighbor to the new path
-                frontier.append((get_heuristic(map[arc.index].cityName), new_path))
+                frontier.append((get_heuristic_choice(map[arc.index].cityName, heuristic_choice), new_path))
 
     return "Goal city not reachable from the start city."
+
+def get_heuristic_choice(cityName, heuristic_choice):
+    if heuristic_choice == 1:
+        return get_heuristic1(cityName)
+    elif heuristic_choice == 2:
+        return get_heuristic2(cityName)
+    else:
+        return float('inf')  # Default to infinity if invalid choice

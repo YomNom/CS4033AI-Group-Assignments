@@ -6,12 +6,12 @@ Arad Sibiu 140
 Timisoara Lugoj 111
 Lugoj Mehadia 70
 Mehadia Drobeta 75
-Drobeta Craiovu 120
+Drobeta Craiova 120
 Sibiu Fagaras 99
-Sibiu Rimnicuvilcea 80
-Rimnicuvilcea Craiovu 146
-Rimnicuvilcea Pitesti 97
-Craiovu Pitesti 138
+Sibiu Rimnicu_Vilcea 80
+Rimnicu_Vilcea Craiova 146
+Rimnicu_Vilcea Pitesti 97
+Craiova Pitesti 138
 Pitesti Bucharest 101
 Fagaras Bucharest 211
 Bucharest Giurgiu 90

@@ -1,14 +1,10 @@
-# FILE: breadthSearch.py
+# Author : Khushbu Borwal
 # Purpose: Implement Breadth Search algorithm
 
 from collections import deque
 from romaniaMap import findCity
 
-# By KB
-# Breadth First Search Algorithm
-# INPUT: map(list of cityNodes)
-#        startCity, endCity - cityNodes
-# OUTPUT: Deque representing path to the goal city
+# Implementation of Breadth Search algorithm
 def bfs(map, startCity, goalCity):
     startIndex = findCity(startCity, map)
     goalIndex = findCity(goalCity, map)
@@ -39,9 +35,3 @@ def bfs(map, startCity, goalCity):
                     frontier.append(new_path)  # Add the new path to the queue
 
     return "Goal city not reachable from the start city."
-
-# Example usage with romaniaMap.txt
-# romania_map = readInMap('romaniaMap.txt')
-# start_city = 'Arad'
-# goal_city = 'Bucharest'
-# print("Breadth First Search Path:", bfs(romania_map, start_city, goal_city))
